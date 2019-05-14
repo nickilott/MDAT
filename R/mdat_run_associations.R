@@ -1,23 +1,39 @@
 #' Run the associations
 #'
 #' This is the main function that performs the association
-#' testing bewteen variables in The Microbe Directory and
+#' testing between variables in The Microbe Directory and
 #' species lists of interest.
 #'
-#' @param 
+#' @param test_set vector of species of interest (e.g. differentially abundant
+#' in the system of interest)
+#' @param background_set vector of species to form the background set (null set)
+#' @param guess_names try to match names of input (species) to microbe directory names
 #' @export
 #' @import dplyr
 #' @examples
-#' run_associations(test_set_file, background_set_file)
+#' run_associations(test_set, background_set)
 
-run_associations <- function(test_set_file, background_set_file, guess_names=TRUE){
+run_associations <- function(test_set,
+                             background_set,
+			     guess_names=TRUE,
+			     variables=c("gram_stain",
+			                 "microbiome_location",
+					 "antimicrobial_susceptibility",
+					 "extreme_environment",
+					 "biofilm_forming",
+					 "animal_pathogen",
+					 "spore_forming",
+					 "plant_pathogen",
+					 "pathogenicity",
+					 "optimal_ph",
+					 "optimal_temperature")){
+
+
+    # check that the variables are as expected
+    # TODO
 
     # format identifiers
     microbe_directory <- format_identifiers(microbe_directory)
-
-    # read in lists
-    test_set <- read_list(test_set_file)
-    background_set <- read_list(background_set_file)
 
     # convert names and check how many are annotated
     test_set <- check_in(microbe_directory=microbe_directory,
@@ -38,6 +54,7 @@ run_associations <- function(test_set_file, background_set_file, guess_names=TRU
 			  "spore_forming",
 			  "plant_pathogen",
 			  "pathogenicity")
+    binary_variables <- intersect(binary_variables, variables)
 
     binary_results <- list()
     plots_binary <- list()
@@ -65,6 +82,7 @@ run_associations <- function(test_set_file, background_set_file, guess_names=TRU
 
     # quantitative variables
     quantitative_variables <- c("optimal_ph", "optimal_temperature")
+    quantitative_variables <- intersect(quantitative_variables, variables)
 
     quantitative_results <- list()
     plots_quant <- list()
