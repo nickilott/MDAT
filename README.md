@@ -79,7 +79,7 @@ and:
 
 Which will display the results for each variable analysed (stacked bar for categorical variables and boxplots with jittered points for quantitative variables).
 
-!(https://github.com/nickilott/MDAT/tree/master/Images/test.png)
+![Plots](https://github.com/nickilott/MDAT/tree/master/Images/test.png)
 
 
 
