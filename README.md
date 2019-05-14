@@ -35,21 +35,24 @@ The steps of the analysis are straightforward - the test_set is compared to the 
 
 The package can be installed using the devtools package.
 
-```install.packages("devtools")
-   devtools::install_github("MDAT", "nickilott")
+```
+    install.packages("devtools")
+    devtools::install_github("MDAT", "nickilott")
 ```
 
 ## Running MDAT
 
 To perform enrichment analysis with MDAT simply provide the path to the test_set and the background_set files:
 
-```library(MDAT)
-   results.mdat <- run_associations(test_set_file="<path-to-file>", background_set_file="<path-to-file>", guess_names=FALSE)
+```
+    library(MDAT)
+    results.mdat <- run_associations(test_set_file="<path-to-file>", background_set_file="<path-to-file>", guess_names=FALSE)
 ```
 
 This will return a list where the first element is a dataframe with the results of the statistical analyses and the second is a grid of plots. To access each element you can type:
 
-```get_results(results.mdat)
+```
+    get_results(results.mdat)
 ```
 
 Which will print the results to the console:
@@ -70,12 +73,13 @@ Which will print the results to the console:
 
 and:
 
-```plot_results(results.mdat)
+```
+    plot_results(results.mdat)
 ```
 
 Which will display the results for each variable analysed (stacked bar for categorical variables and boxplots with jittered points for quantitative variables).
 
-
+!(https://github.com/nickilott/MDAT/tree/master/Images/test.png)
 
 
 
