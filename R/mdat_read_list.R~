@@ -1,0 +1,13 @@
+#' Read lists for background or foreground sets of species
+#'
+#' This function reads in the foreground/background sets (single column .tsv file)
+#' @param set of species (foreground or background)
+#' @export
+#' @examples
+#' read_list("foreground.tsv"))
+
+read_list <- function(species_file){
+
+    species_set <- read.csv(species_file, header=TRUE, stringsAsFactors=FALSE, sep="\t")
+    return(species_set)
+    }

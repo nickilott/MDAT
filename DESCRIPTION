@@ -1,0 +1,10 @@
+Package: MDAT
+Title: microbe directory association tester
+Version: 0.0.0
+Authors@R: person("Nicholas", "Ilott", email = "nicholas.ilott@kennedy.ox.ac.uk", role = c("aut", "cre"))
+Description: Takes two files of species (test set and background set) and assesses association with parameters obtained from The Microbe Directory
+Depends: R (>= 3.4.1)
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0

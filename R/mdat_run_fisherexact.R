@@ -1,0 +1,39 @@
+#' Chi-squared test on contingency table
+#'
+#' Chi-squared test on binary variable counts
+#' between test_set and background_set
+#'
+#' @param contingency table
+#' @export
+#' @examples
+#' run_chisquare(contingency_table, label="label")
+
+run_chisquare <- function(contingency_table, label="label"){
+
+    res <- chisq.test(contingency_table)
+    res <- data.frame(statistic=res$statistic, pvalue=res$p.value, test="Chi-square")
+    res$variable <- label
+    return(res)
+    }
+
+#' Fishers exact test
+#'
+#' Fisher exact test on binary variable counts
+#' between test_set and background_set
+#'
+#' @param contingency table
+#' @export
+#' @examples
+#' run_fisherexact(contingency_table, label="label")
+
+run_fisherexact <- function(contingency_table, label="label"){
+
+    res <- fisher.test(contingency_table)
+    if (is.null(res$estimate)){
+        estimate <- NA}
+    else{
+        estimate <- res$estimate[[1]]}
+    res <- data.frame(statistic=estimate, pvalue=res$p.value[[1]], test="Fisher")
+    res$variable <- label
+    return(res)
+    }
