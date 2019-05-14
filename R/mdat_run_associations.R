@@ -15,7 +15,7 @@
 
 run_associations <- function(test_set,
                              background_set,
-			     guess_names=TRUE,
+			     guess_names=FALSE,
 			     variables=c("gram_stain",
 			                 "microbiome_location",
 					 "antimicrobial_susceptibility",
