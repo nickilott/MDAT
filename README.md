@@ -79,7 +79,7 @@ and:
 
 Which will display the results for each variable analysed (stacked bar for categorical variables and boxplots with jittered points for quantitative variables).
 
-<img src="Images/test.png" alt="plots" height="20%" width="20%"/>
+<img src="Images/test.png" alt="plots" height="75%" width="75%"/>
 
 
 
