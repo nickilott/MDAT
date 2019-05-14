@@ -32,12 +32,15 @@ get_results <- function(run_association_list){
 #'
 #' Plot the results that are stored after run_associations
 #' @param plot results from run_associations
-#' @import gridExtra
+#' @import gridExtra grid
 #' @export
 #' @examples
 #' plot_results(run_association_list)
 
-plot_results <- function(run_association_list){
+plot_results <- function(run_association_list, output="print"){
+
+    if (!(output %in% c("print", "return"))){
+        stop("Output must be one of 'print' or 'return'")}
 
     p1 <- run_association_list[[2]][[1]]
     if (is.null(p1)){ p1 <- plot_null(p1, label="gram_stain") }
@@ -62,8 +65,12 @@ plot_results <- function(run_association_list){
     p11 <- run_association_list[[2]][[11]]
     if (is.null(p11)){ p11 <- plot_null(p11, label="optimal_temperature") }
     
-    p <- grid.arrange(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, ncol=4)
-    return(p)
+    p <- arrangeGrob(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, ncol=4)
+
+    if (output == "print"){
+        grid.draw(p)}
+    else{
+        return(p)}
 }
 
 
