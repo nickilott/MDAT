@@ -33,7 +33,7 @@ run_associations <- function(test_set,
     # TODO
 
     # format identifiers
-    microbe_directory <- format_identifiers(microbe_directory)
+    microbe_directory <- get_microbe_directory()
 
     # convert names and check how many are annotated
     test_set <- check_in(microbe_directory=microbe_directory,

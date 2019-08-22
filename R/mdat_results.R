@@ -42,30 +42,7 @@ plot_results <- function(run_association_list, output="print"){
     if (!(output %in% c("print", "return"))){
         stop("Output must be one of 'print' or 'return'")}
 
-    p1 <- run_association_list[[2]][[1]]
-    if (is.null(p1)){ p1 <- plot_null(p1, label="gram_stain") }
-    p2 <- run_association_list[[2]][[2]]
-    if (is.null(p2)){ p2 <- plot_null(p2, label="microbiome_location") }
-    p3 <- run_association_list[[2]][[3]]
-    if (is.null(p3)){ p3 <- plot_null(p3, label="antimicrobial_susceptibility") }
-    p4 <- run_association_list[[2]][[4]]
-    if (is.null(p4)){ p4 <- plot_null(p4, label="extreme_environment") }
-    p5 <- run_association_list[[2]][[5]]
-    if (is.null(p5)){ p5 <- plot_null(p5, label="biofilm_forming") }
-    p6 <- run_association_list[[2]][[6]]
-    if (is.null(p6)){ p6 <- plot_null(p6, label="animal_pathogen") }
-    p7 <- run_association_list[[2]][[7]]
-    if (is.null(p7)){ p7 <- plot_null(p7, label="spore_forming") }
-    p8 <- run_association_list[[2]][[8]]
-    if (is.null(p8)){ p8 <- plot_null(p8, label="plant_pathogen") }
-    p9 <- run_association_list[[2]][[9]]
-    if (is.null(p9)){ p9 <- plot_null(p9, label="pathogenicity") }
-    p10 <- run_association_list[[2]][[10]]
-    if (is.null(p10)){ p10 <- plot_null(p10, label="optimal_ph") }
-    p11 <- run_association_list[[2]][[11]]
-    if (is.null(p11)){ p11 <- plot_null(p11, label="optimal_temperature") }
-    
-    p <- arrangeGrob(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, ncol=4)
+    p <- arrangeGrob(grobs=run_association_list[[2]], ncol=4)
 
     if (output == "print"){
         grid.draw(p)}
