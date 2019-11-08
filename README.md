@@ -42,7 +42,7 @@ The package can be installed using the devtools package.
 
 ## Running MDAT
 
-To perform enrichment analysis with MDAT simply provide the path to the test_set and the background_set vectors:
+To perform enrichment analysis with MDAT simply provide the test_set and the background_set vectors:
 
 ```
     library(MDAT)
