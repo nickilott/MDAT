@@ -1,5 +1,7 @@
 # The Microbe Directory Association Tester (MDAT)
 
+<img src="Images/MDAT_logo.png" alt="mdat_logo" height="100%" width="100%"/>
+
 ## Overview
 
 It is often of interest to evaluate the characteristics of differentially abundant microbes in a system of interest. [The Microbe Directory](https://microbe.directory) is a valuable resource that contains multiple pieces of information regarding growth preferences, antimicrobial susceptibilty, gram staining etc. of a large collection of microbes. It is browsable at the level of individual species and the data are made available on [GitHub](https://github.com/microbe-directory/microbe-directory) for more systematic bioinformatics analyses. The package described here makes use of the data that are available on GitHub to perform enrichment analyses based on the characteristics present in The Microbe Directory.
