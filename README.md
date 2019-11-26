@@ -1,5 +1,5 @@
 
-<img src="Images/MDAT_logo.png" alt="mdat_logo" height="25%" width="25%"/> # The Microbe Directory Association Tester (MDAT)
+<img src="Images/MDAT_logo.png" alt="mdat_logo" height="25%" width="25%"/>
 
 ## Overview
 
