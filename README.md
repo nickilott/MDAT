@@ -1,5 +1,5 @@
 
-<img src="Images/MDAT_logo.png" alt="mdat_logo" height="25%" width="25%"/>
+<img src="Images/MDAT_logo.png" alt="mdat_logo" height="100%" width="100%"/>
 
 ## Overview
 
