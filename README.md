@@ -38,7 +38,7 @@ The package can be installed using the devtools package.
 
 ```
     install.packages("devtools")
-    devtools::install_github("MDAT", "nickilott")
+    devtools::install_github("nickilott/MDAT")
 ```
 
 ## Running MDAT
