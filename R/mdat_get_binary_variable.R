@@ -26,18 +26,22 @@ get_binary_variable <- function(microbe_directory=microbe_directory,
         stop(paste0("There is no binary variable '", variable, "' in The Microbe Directory"))
     }
 
-    test_set_variable <- data.frame(microbe_directory[test_set, variable])
+    test_set_ids <- intersect(rownames(microbe_directory), test_set)
+
+    test_set_variable <- data.frame(microbe_directory[test_set_ids, variable])
     test_set_variable$type <- "test_set"
     colnames(test_set_variable) <- c(variable, "type")
-
-    background_set_variable <- data.frame(microbe_directory[background_set, variable])
+    
+    background_set_ids <- intersect(rownames(microbe_directory), background_set)
+    background_set_variable <- data.frame(microbe_directory[background_set_ids, variable])
     background_set_variable$type <- "background_set"
     colnames(background_set_variable) <- c(variable, "type")
 
     dat <- data.frame(bind_rows(test_set_variable, background_set_variable))
-    rownames(dat) <- append(rownames(microbe_directory[test_set,]), rownames(microbe_directory[background_set,]))
+    rownames(dat) <- append(test_set_ids, background_set_ids)
 
     cat("Removing rows with no data...\n")
     dat <- na.omit(dat)
+
     return(dat)
     }
