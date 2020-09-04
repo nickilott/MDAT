@@ -29,7 +29,7 @@ get_quantitative_variable <- function(microbe_directory=microbe_directory,
     background_set_variable$type <- "background_set"
     colnames(background_set_variable) <- c(variable, "type")
 
-    dat <- data.frame(bind_rows(test_set_variable, background_set_variable))
+    dat <- data.frame(rbind(test_set_variable, background_set_variable))
     rownames(dat) <- append(test_set_ids, background_set_ids)
 
     cat("Removing rows with no data...\n")
