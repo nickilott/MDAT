@@ -3,6 +3,7 @@
 export(build_contingency_table)
 export(check_in)
 export(format_identifiers)
+export(get_annotations)
 export(get_binary_variable)
 export(get_microbe_directory)
 export(get_quantitative_variable)

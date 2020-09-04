@@ -4,7 +4,7 @@
 #' in the microbe directory.
 #' It contains the annotations for the test set and background set.
 #'
-#' @param database test_set
+#' @param test_set background_set
 #' @export
 #' @examples
 #' get_annotations(test_set=test_set, background_set=background_set)
