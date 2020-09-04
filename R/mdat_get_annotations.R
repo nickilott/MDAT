@@ -9,7 +9,7 @@
 #' @examples
 #' get_annotations(test_set=test_set, background_set=background_set)
 
-get_annotations <- function(test_set=test_set, background_set=background_set){
+get_annotations <- function(test_set=test_set, background_set=background_set, guess_names=FALSE){
 
     microbe_directory <- get_microbe_directory()
 
