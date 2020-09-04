@@ -42,6 +42,7 @@ get_annotations <- function(test_set=test_set, background_set=background_set, gu
                                    test_set=test_set,
 				   background_set=background_set,
 				   variable=bin.variable)
+        rownames(dat) <- test_set[rownames(dat)]
         annotations[[i]] <- dat        
     }
     
@@ -55,6 +56,7 @@ get_annotations <- function(test_set=test_set, background_set=background_set, gu
 				   background_set=background_set,
 				   variable=quant.variable)
         annotations[[i+9]] <- dat
+	rownames(dat) <- test_set[rownames(dat)]
     }
     names(annotations) <- append(binary_variables, quantitative_variables)
     return(annotations)
